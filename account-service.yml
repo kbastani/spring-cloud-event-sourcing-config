@@ -3,6 +3,15 @@ spring:
     active: development
 ---
 spring:
+  profiles: cloud
+security:
+  oauth2:
+    resource:
+      userInfoUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+    client:
+      client-id: acme
+---
+spring:
   profiles: development
   datasource:
     url: jdbc:mysql://192.168.99.100:3306/dev

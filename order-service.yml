@@ -1,6 +1,25 @@
 spring.profiles.active: development
 ---
 spring:
+  profiles: cloud
+  data:
+    mongodb:
+      host: ${vcap.services.order-db.credentials.hostname:localhost}
+      port: ${vcap.services.order-db.credentials.port:27017}
+  mvc:
+    date-format: "YYYY-MM-dd"
+  jackson:
+    date-format: "YYYY-MM-dd"
+    serialization:
+      write_dates_as_timestamps: true
+security:
+  oauth2:
+    resource:
+      userInfoUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+    client:
+      client-id: acme
+---
+spring:
   profiles: development
   data:
     mongodb:
