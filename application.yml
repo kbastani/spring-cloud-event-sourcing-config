@@ -1,0 +1,9 @@
+info:
+  id: ${spring.application.name}
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.netflix.eureka: OFF
+    com.netflix.discovery: OFF
