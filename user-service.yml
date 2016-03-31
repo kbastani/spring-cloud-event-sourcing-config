@@ -3,6 +3,16 @@ spring:
     active: development
 ---
 server:
+  contextPath: /uaa
+security:
+  user:
+    password: password
+  enable-csrf: false
+spring:
+  profiles: cloud
+security.ignored: /resources/**
+---
+server:
   port: 8181
   contextPath: /uaa
 security:
