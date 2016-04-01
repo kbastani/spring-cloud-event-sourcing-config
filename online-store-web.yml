@@ -27,6 +27,7 @@ security:
       userAuthorizationUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
+  ignored: /assets/**
 ---
 spring:
   profiles: development
