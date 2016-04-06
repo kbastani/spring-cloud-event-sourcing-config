@@ -4,6 +4,8 @@ spring:
 ---
 spring:
   profiles: cloud
+  datasource:
+    platform: mysql
 security:
   oauth2:
     resource:
@@ -11,8 +13,6 @@ security:
     client:
       client-id: acme
   enable-csrf: false
-  datasource:
-    platform: mysql
 ---
 spring:
   profiles: development
