@@ -11,6 +11,8 @@ security:
     client:
       client-id: acme
   enable-csrf: false
+  datasource:
+    platform: mysql
 ---
 spring:
   profiles: development
